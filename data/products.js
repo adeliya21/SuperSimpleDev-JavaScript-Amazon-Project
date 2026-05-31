@@ -77,6 +77,45 @@ const tshirt = new Clothing({
 console.log(tshirt);
 */
 
+/*
+// Example of calss DayJs() reling on pre-built classes such as Date()
+const date = new Date();
+console.log(date);
+console.log(date.toLocaleTimeString());
+*/
+
+
+// Indise a method, this points to an outer object. These are example of lack of outer object, therefore this = undefined.
+/*
+console.log(this); // undefined
+
+const object2 = {
+  a: 2,
+  b: this.a
+};
+console.log(object2.b); // undefined
+*/
+
+// Inisde a function, this = undefined. But we can change it using .call()
+/*
+function logThis() {
+  console.log(this);
+}
+logThis();
+logThis.call('hello');
+*/
+
+// Arrow functions do not change the value of this
+/*
+this
+const object3 = {
+  method: () => {
+    console.log(this);
+  }
+}
+object3.method();
+*/
+
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
