@@ -118,6 +118,29 @@ object3.method();
 
 export let products = [];
 
+export function loadProductsFetch() {
+  const promise = fetch('https://supersimplebackend.dev/products')
+    .then((response) => {
+      return response.json();
+    }).then((productsData) => {
+        products = productsData.map((productDetails) => {
+          if (productDetails.type === 'clothing') {
+            return new Clothing(productDetails);
+          }
+          return new Product(productDetails);
+        });
+        console.log('load products - fetch')
+    })
+
+  return promise;
+}
+/*
+loadProductsFetch().then(() => {
+  console.log('next step - fetch')
+});
+*/
+
+
 export function loadProducts(fun) { //fun - is call back function; it will be called back after products response is received
   const xhr = new XMLHttpRequest();
 
@@ -129,7 +152,7 @@ export function loadProducts(fun) { //fun - is call back function; it will be ca
         return new Product(productDetails);
       });
 
-  console.log('load products');
+  console.log('load products - XMLHttpRequest');
 
   fun();
 
