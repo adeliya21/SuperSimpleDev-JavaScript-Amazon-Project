@@ -1,4 +1,4 @@
-# SuperSimpleDev-JavaScript-Amazon-Project
+# JavaScript-Project-Amazon-SuperSimpleDev
 
 A front-end e-commerce project built while learning JavaScript through the SuperSimpleDev course. This project recreates core Amazon shopping functionality using HTML, CSS, and JavaScript.
 
